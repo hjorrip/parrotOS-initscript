@@ -71,8 +71,4 @@
     echo "Setting up tun interface for ligolo-ng..."
     sudo ip tuntap add user $(whoami) mode tun ligolo 2>/dev/null || sudo ip link set ligolo up
 
-    # Launching ligolo-ng proxy
-    echo "Launching ligolo-ng proxy..."
-    mate-terminal --command="/bin/bash -c '$BASE_DIR/proxy -autocert'" || { echo "Failed to launch proxy"; exit 1; }
-
     echo "Setup complete."
